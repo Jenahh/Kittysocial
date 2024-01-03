@@ -31,40 +31,40 @@ export default function Rightbar({profile}) {
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Location:</span>
-            <span className="rightbarInfoValue"> New York</span>
+            <span className="rightbarInfoValue">New York</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue"> Madrid</span>
+            <span className="rightbarInfoValue">Madrid</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship Status:</span>
-            <span className="rightbarInfoValue"> Single</span>
+            <span className="rightbarInfoValue">Single</span>
           </div>
         </div>
         <h4 className="rightbarTitle">User Friends</h4>
         <div className="rightbarFollowings">
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/abood.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/afnan.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/foofsa.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/ziko.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/shefaa.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
-          <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
             <img src="assets/person/tazi.jpeg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
@@ -75,7 +75,7 @@ export default function Rightbar({profile}) {
   return (
     <div className = "rightbar">
         <div className="rightbarWrapper">
-          <ProfileRightbar/>
+          {profile ? <ProfileRightbar/> : <HomeRightbar />}
         </div>
     </div>
   );
