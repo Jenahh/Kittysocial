@@ -3,7 +3,7 @@ import {Users} from "../../dummyData"
 import Online from "../online/Online";
 
 export default function Rightbar({profile}) {
-
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = () => {
     return(
       <>
@@ -45,28 +45,28 @@ export default function Rightbar({profile}) {
         <h4 className="rightbarTitle">User Friends</h4>
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
-            <img src="assets/person/abood.jpeg" alt="" className="rightbarFollowingImg" />
+            <img src={`${PF}person/abood.jpeg`} alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
           </div>
           <div className="rightbarFollowing">
-            <img src="assets/person/afnan.jpeg" alt="" className="rightbarFollowingImg" />
-            <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
+            <img src={`${PF}person/foofsa.jpeg`} alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">Afaq Mansour</span>
           </div>
           <div className="rightbarFollowing">
-            <img src="assets/person/foofsa.jpeg" alt="" className="rightbarFollowingImg" />
-            <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
+            <img src={`${PF}person/ziko.jpeg`}alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">Dhikra Mansour</span>
           </div>
           <div className="rightbarFollowing">
-            <img src="assets/person/ziko.jpeg" alt="" className="rightbarFollowingImg" />
-            <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
+            <img src={`${PF}person/shefaa.jpeg`} alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">Shefaa Mansour</span>
           </div>
           <div className="rightbarFollowing">
-            <img src="assets/person/shefaa.jpeg" alt="" className="rightbarFollowingImg" />
-            <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
+            <img src={`${PF}person/afnan.jpeg`} alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">Afnan Mansour</span>
           </div>
           <div className="rightbarFollowing">
-            <img src="assets/person/tazi.jpeg" alt="" className="rightbarFollowingImg" />
-            <span className="rightbarFollowingName">Abdel Rahman Mansour</span>
+            <img src={`${PF}person/tazi.jpeg`} alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">Tasneem Mansour</span>
           </div>
         </div>
       </>
