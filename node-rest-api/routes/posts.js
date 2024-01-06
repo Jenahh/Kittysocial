@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Post = require("../models/Post")
+const User = require("../models/User")
 //create a post
 
 router.post("/", async (req,res)=>{
@@ -8,7 +9,7 @@ router.post("/", async (req,res)=>{
         const savedPost = await newPost.save();
         res.status(200).json(savedPost);
     }catch(err){
-        res.status(500).json(err)
+        return res.status(500).send(err.message);
     }
 });
 //update a post
@@ -23,7 +24,7 @@ router.put("/:id", async (req,res)=>{
             res.status(403).json("You can only update posts you own")
         }
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err.message);
     }
 });
 //delete a post
@@ -37,7 +38,7 @@ router.delete("/:id", async (req,res)=>{
             res.status(403).json("You can only delete posts you own")
         }
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err.message);
     }
 });
 //like or unlike a post
@@ -53,7 +54,7 @@ router.put("/:id/like", async (req,res)=>{
             res.status(200).json("You unliked this post")
         }
     }catch(err){
-        res.status(500),json(err);
+        return res.status(500).send(err.message);
     }
 })
 //get a post
@@ -63,7 +64,7 @@ router.get("/:id", async (req,res) =>{
         const post = await Post.findById(req.params.id);
         res.status(200).json(post);
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err.message);
     } 
 })
 //get timeline posts (FIX THISSS!!!)
@@ -94,7 +95,7 @@ router.get("/timeline/:userId", async (req, res) => {
       );
       res.status(200).json(userPosts.concat(...friendPosts))
     } catch (err) {
-      res.status(500).json(err);
+      return res.status(500).send(err.message);
     }
   });
 

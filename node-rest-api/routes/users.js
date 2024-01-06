@@ -10,7 +10,7 @@ router.put("/:id", async(req,res)=>{
                 const salt = await bcrypt.genSalt(10);
                 req.body.password = await bcrypt.hash(req.body.password, salt);
             } catch (err){
-                return res.status(500).json(err);
+                return res.status(500).send(err.message);
             }
         }
         try{
@@ -19,7 +19,7 @@ router.put("/:id", async(req,res)=>{
             });
             res.status(200).json("Account has been updated");
         } catch(err){
-            return res.status(500).json(err);
+            return res.status(500).send(err.message);
         }
     }else{
         return res.status(403).json("You can only update your account");
@@ -33,7 +33,7 @@ router.delete("/:id", async(req,res)=>{
             const user = await User.findByIdAndDelete(req.params.id);
             res.status(200).json("Account has been deleted");
         } catch(err){
-            return res.status(500).json(err);
+            return res.status(500).send(err.message);
         }
     }else{
         return res.status(403).json("You can only delete your account");
@@ -47,7 +47,7 @@ router.get("/:id", async (req,res)=>{
         const {password,updatedAt, ...other} = user._doc
         res.status(200).json(other);
     }catch(err){
-        res.status(500).json(err);
+        return res.status(500).send(err.message);
     }
 })
 
@@ -66,7 +66,7 @@ router.put("/:id/follow", async (req,res)=>{
                 res.status(403).json("You are already a follower of this user");
             }
         }catch(err){
-            res.status(500).json(err);
+            return res.status(500).send(err.message);
         }
     }else{
         res.status(403).json("You can't follow yourself");
@@ -88,7 +88,7 @@ router.put("/:id/unfollow", async (req,res)=>{
                 res.status(403).json("You do not follow this user");
             }
         }catch(err){
-            res.status(500).json(err);
+            return res.status(500).send(err.message);
         }
     }else{
         res.status(403).json("You can't unfollow yourself");
