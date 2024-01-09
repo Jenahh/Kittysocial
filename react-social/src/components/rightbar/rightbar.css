@@ -53,6 +53,7 @@
 
 .rightbarInfoItem{
     margin-bottom: 10px;
+    margin-left: 35px;
 }
 
 .rightbarInfoKey{
@@ -76,6 +77,7 @@
     flex-direction: column;
     margin-bottom: 20px;
     cursor: pointer;
+    margin-left: 35px;
 }
 
 .rightbarFollowingImg{
@@ -83,4 +85,24 @@
     height: 100px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.rightbarFollowButton{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #fab575;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 35px;
+}
+
+.rightbarFollowButton:focus{
+    outline: none;
 }

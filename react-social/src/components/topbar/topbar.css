@@ -90,6 +90,7 @@
 .topbarImg{
     width: 40px;
     height: 40px;
+    margin-top: 5px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
