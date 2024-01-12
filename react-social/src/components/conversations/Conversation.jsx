@@ -8,11 +8,13 @@ export default function Conversation({conversation, currentUser}) {
 
   useEffect(()=>{
     const friendId = conversation.members.find(m=>m !== currentUser._id)
+    console.log(friendId);
   
     const getUser = async ()=>{
       try{
         const res = await axios("/users?userId="+friendId)
       console.log(res.data)
+      setUser(res.data)
       }catch(err){
         console.log(err);
       }
@@ -24,7 +26,7 @@ export default function Conversation({conversation, currentUser}) {
 
   return (
     <div className = "conversation">
-      <img className = "conversationImg" src={user?.profilePicture ? user.profilePicture : PF + "nopfp.jpg"} alt="" />
+      <img className = "conversationImg" src={user?.profilePicture ? user.profilePicture : PF + "/person/nopfp.jpg"} alt="" />
         <span className="conversationName">{user?.username}</span>
     </div>
   )

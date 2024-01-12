@@ -20,7 +20,7 @@ mongoose.connect(
      { useNewUrlParser: true, useUnifiedTopology: true}, 
      ()=>{
     console.log("Connected to MongoDB")
-    }   
+    }
 );
 
 app.use("/images", express.static(path.join(__dirname, "public/images")))

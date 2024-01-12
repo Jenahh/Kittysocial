@@ -53,10 +53,19 @@
     cursor: pointer;
 }
 
+.chatSubmitButton:focus{
+    outline: none;
+}
+
 .chatMessageInput{
     width: 80%;
     height: 90px;
     padding: 10px;
+    border: aliceblue;
+}
+
+.chatMessageInput:focus{
+    outline: none;
 }
 
 .chatOnline{
