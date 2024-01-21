@@ -26,7 +26,7 @@ export default function Conversation({conversation, currentUser}) {
 
   return (
     <div className = "conversation">
-      <img className = "conversationImg" src={user?.profilePicture ? user.profilePicture : PF + "/person/nopfp.jpg"} alt="" />
+      <img className = "conversationImg" src={user?.profilePicture ? PF + user.profilePicture : PF + "person/nopfp.jpg"} alt="" />
         <span className="conversationName">{user?.username}</span>
     </div>
   )
