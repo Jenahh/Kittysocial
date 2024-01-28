@@ -95,3 +95,47 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+.DropdownMenu{
+    display: none;
+    height: 80px;
+    width: 80px;
+}
+
+.DropdownItem{
+    width: 60px;
+    height: 35px;
+    background-color: antiquewhite;
+    text-align: center;
+    font-size: 15px;
+    list-style-type: none;
+}
+
+.DropdownItem a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.DropdownItem a:hover{
+    background-color: #FAC898;
+}
+
+.Dropdown:hover .DropdownMenu{
+    display: inline;
+}
+
+.LogoutButton{
+    width: 60px;
+    height: 40px;
+    background-color: antiquewhite;
+    text-align: center;
+    font-size: 15px;
+    list-style-type: none;
+    border: none;
+    cursor: pointer;
+}
+
+.LogoutButton:hover{
+    background-color: #FAC898;
+}

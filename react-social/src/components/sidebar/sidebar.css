@@ -32,11 +32,20 @@
 .sideBarListItem{
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.sideBarListItemText{
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+    color: black;
+    cursor: pointer;
 }
 
 .sidebarIcon{
     margin-right: 15px;
+    margin-bottom: 25px;
 }
 
 .sidebarButton{
@@ -44,6 +53,7 @@
     border: none;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
     font-weight: 500;
 }
 

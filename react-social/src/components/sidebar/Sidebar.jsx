@@ -1,52 +1,82 @@
 import "./sidebar.css"
-import {Bookmark, ChatBubble, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline} from "@material-ui/icons"
-import {Users} from "../../dummyData"
+import {
+    RssFeed,
+    Chat,
+    PlayCircleFilledOutlined,
+    Group,
+    Bookmark,
+    HelpOutline,
+    Event,
+    School,
+    VideogameAsset
+  } from "@material-ui/icons"
+  import {Users} from "../../dummyData"
 import CloseFriend from "../closeFriend/CloseFriend";
+import { Link } from "@material-ui/core";
 
 export default function Sidebar(){
-    return(
-        <div className = "sidebar">
-            <div className="sidebar">
-                <div className="sidebarWrapper">
-                    <ul className="sidebarList">
-                        <li className="sideBarListItem">
-                            <RssFeed className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Feed</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <ChatBubble className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Chats</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <PlayCircleFilledOutlined className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Videos</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <Group className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Groups</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <Bookmark className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Bookmarks</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <HelpOutline className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Questions</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <WorkOutline className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Jobs</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <Event className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Events</span>
-                        </li>
-                        <li className="sideBarListItem">
-                            <School className ="sidebarIcon"/>
-                            <span className="sidebarListItemText">Courses</span>
-                        </li>
-                    </ul>
-                    <button className="sidebarButton">Show More</button>
+    return (
+        <div className="sidebar">
+          <div className="sidebarWrapper">
+            <ul className="sidebarList">
+              <li className="sideBarListItem">
+                <RssFeed className="sidebarIcon" />
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <span className="sideBarListItemText">Feed</span>
+                </Link>
+              </li>
+              <li className="sideBarListItem">
+                <Chat className="sidebarIcon" />
+                <Link to="/messenger" style={{ textDecoration: "none" }}>
+                  <span className="sideBarListItemText">Chats</span>
+                </Link>
+              </li>
+              <li className="sideBarListItem">
+                <PlayCircleFilledOutlined className="sidebarIcon" />
+                <a href="https://www.youtube.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Videos</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <Group className="sidebarIcon" />
+                <a href="https://reddit.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Groups</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <Bookmark className="sidebarIcon" />
+                <a href="https://z-lib.org/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Bookmarks</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <HelpOutline className="sidebarIcon" />
+                <a href="https://quora.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Questions</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <VideogameAsset className="sidebarIcon" />
+                <a href="https://store.steampowered.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Video Games</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <Event className="sidebarIcon" />
+                <a href="https://www.eventsforgamers.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Events</span>
+                </a>
+              </li>
+              <li className="sideBarListItem">
+                <School className="sidebarIcon" />
+                <a href="https://www.gamersensei.com/" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                  <span className="sideBarListItemText">Coaching</span>
+                </a>
+              </li>
+            </ul>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+              <button className="sidebarButton">Show More</button>
+            </a>
                     <hr className="sidebarHr"/>
                     <ul className="sidebarFriendList">
                         {Users.map((u)=>(
@@ -55,6 +85,5 @@ export default function Sidebar(){
                     </ul>
                 </div>
             </div>
-        </div>
     )
 }

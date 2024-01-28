@@ -1,14 +1,27 @@
 import "./topbar.css"
 import { Search, Person, Chat, Notifications } from "@material-ui/icons"
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import {Link} from "react-router-dom"
 import {AuthContext} from "../../context/AuthContext"
 
 
 export default function Topbar(){
-
+    const PublicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
     const {user} = useContext(AuthContext)
+    const friendName = useRef();
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const handleClick = (e) => {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.href = '/';
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        window.location.href = "/profile/" + friendName.current.value;
+        return false;
+    }
+
     return(
         <div className = "topbarContainer">
             <div className="topbarLeft">
@@ -41,9 +54,15 @@ export default function Topbar(){
                         <span className="topbarIconBadge">1</span>
                     </div>
                 </div>
-                <Link to = {`/profile/${user.username}`}>
-                <img src={user.profilePicture ? PF+user.profilePicture : PF+"person/nopfp.jpg"} alt="" className="topbarImg" />
-                </Link>
+                <ul className="Dropdown">
+                    <li>
+                        <img src={user.profilePicture ? PublicFolder + user.profilePicture : PublicFolder + "person/nopfp.jpg"} alt="" className="topbarImg" />
+                    </li>
+                    <ul className="DropdownMenu">
+                        <li className="DropdownItem"><Link to={`/profile/${user.username}`}>Profile Page</Link></li>
+                        <li className="DropdownItem"><button className="LogoutButton" onClick={handleClick}>Logout</button></li>
+                    </ul>
+                </ul>
             </div>
         </div>
     );
