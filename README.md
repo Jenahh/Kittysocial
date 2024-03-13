@@ -1,4 +1,4 @@
-https://youtu.be/QIQQgL2tfhY
+https://github.com/Jenahh/Kittysocial/assets/143299160/63e69dd7-b9cc-4d0d-9403-f0d0c2b37fb1
 
 1- You have to download node.js, so that you can launch the projects and use a command called npm: you can find the download link here: https://nodejs.org/en/download/
 
